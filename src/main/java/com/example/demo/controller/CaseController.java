@@ -47,6 +47,11 @@ public class CaseController {
 	public List<Cases> getAllCases() {
 		return caseService.getAllCases();
 	}
+	@RequestMapping(value = "/placard/{idPlacard}/cases", method = RequestMethod.GET)
+	public List<Cases> getCasesPlacard(@PathVariable Long idPlacard){
+		Placard p= placardService.getPlacardById(idPlacard);
+		return p.getCases();
+	}
 	// add case
 //  	{
 //  	    "nomCase": "casenew",

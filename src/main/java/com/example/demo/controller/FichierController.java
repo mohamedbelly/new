@@ -49,6 +49,11 @@ public class FichierController {
 	public List<Fichier> getAllFichiers() {
 		return fichierService.getAllFichiers();
 	}
+	@RequestMapping(value = "/classeur/{idClasseur}/fichiers", method = RequestMethod.GET)
+	public List<Fichier> getFichiersClasseur(@PathVariable Long idClasseur){
+		Classeur c= classeurService.getClasseurById(idClasseur);
+		return c.getFichiers();
+	}
 	
 	@RequestMapping(value = "/fichier", method = RequestMethod.PUT)
 	public Fichier editFichier(@RequestBody Fichier f) {

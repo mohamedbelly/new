@@ -57,6 +57,11 @@ public class PlacardController {
 	public List<Placard> getAllPlacards() {
 		return placardService.getAllPlacards();
 	}
+	@RequestMapping(value = "/service/{idService}/placards", method = RequestMethod.GET)
+	public List<Placard> getPlacardsService(@PathVariable Long idService){
+		Services s= serviceService.getServiceById(idService);
+		return s.getPlacards();
+	}
 //ajouter placard
 //	{
 //    "nomPlacard": "Placard2",

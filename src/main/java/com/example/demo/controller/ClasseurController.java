@@ -52,6 +52,11 @@ public class ClasseurController {
 	public List<Classeur> getAllClasseurs() {
 		return classeurService.getAllClasseurs();
 	}
+	@RequestMapping(value = "/case/{idCase}/classeurs", method = RequestMethod.GET)
+	public List<Classeur> getClasseursCase(@PathVariable Long idCase){
+		Cases c= caseService.getCaseById(idCase);
+		return c.getClasseurs();
+	}
 //	add classeur
 //	{
 //	    "nomClasseur": "Classeur1",

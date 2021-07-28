@@ -79,10 +79,7 @@ public class UploadFile {
                         Files.copy(file.getInputStream(), filePath, StandardCopyOption.REPLACE_EXISTING);
                     } catch (IOException e) {
                         throw new RuntimeException("Issue in storing the file", e);
-                    }
-                    //obtenir le nombre de fichiers existe dans la base de données
-                	dbNombreFichiers=(long)repo.getAllFichiers().size();
-                   
+                    }                   
                     //Ecrire avant l'extention l'id du fichier pour eviter la redondance
                     fileName=fileName.substring(0,fileName.lastIndexOf(".")) +"_"+dbNombreFichiers+fileName.substring(fileName.lastIndexOf("."));
                     //preciser l'url
