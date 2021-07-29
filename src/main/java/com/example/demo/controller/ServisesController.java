@@ -52,6 +52,7 @@ public class ServisesController {
 	private Path classeurStoragePath;
 	private Path placardStoragePath;
 	private String serviceStorageLocation;
+	
 	@RequestMapping(value = "/services", method = RequestMethod.GET)
 	public List<Services> getAllServices() {
 		return serviceService.getAllServices();
@@ -134,7 +135,7 @@ public class ServisesController {
 		//verifier si le nom du service existe deja dans la base de donnée
 		if(liste!=null) {
 			for(Services l : liste) {
-				if(l.getNomService().equals((s.getNomService())) && !l.getIdService().equals(s.getIdService())) {
+				if(l.getNomService().equals((s.getNomService())) && l.getIdService()!=s.getIdService()) {
 					 throw new RuntimeException("Le nom du service existe déjà");
 				}
 			}
