@@ -134,7 +134,15 @@ public class FichierController {
 			System.out.println("Directory moved successfully");
 		}
 		catch (IOException e) {
-			 throw new RuntimeException("Issue in moving the directory");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("test fichier");
+			System.out.println("");
+			System.out.println("");
+			System.out.println("");
+			return null;
+//			 throw new RuntimeException("Issue in moving the directory");
         }
 		return f;
 	}
