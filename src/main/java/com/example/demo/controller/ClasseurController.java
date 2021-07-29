@@ -65,7 +65,7 @@ public class ClasseurController {
 //			}
 //	  }
 	@RequestMapping(value = "/classeur" ,method = RequestMethod.POST)
-	public Classeur addClasseur(@Valid @RequestBody Classeur classeur, BindingResult bindingResult ){
+	public Classeur addClasseur( @RequestBody @Valid Classeur classeur, BindingResult bindingResult ){
 		if(bindingResult.hasErrors()) {
 			//return FormService;
 		}   

@@ -71,7 +71,7 @@ public class PlacardController {
 //    }
 //}
 	@RequestMapping(value = "/placard", method = RequestMethod.POST)
-	 public Placard addPlacard(@Valid @RequestBody Placard p,BindingResult bindingResult ){
+	 public Placard addPlacard( @RequestBody @Valid Placard p,BindingResult bindingResult ){
 			if(bindingResult.hasErrors()) {
 				//return FormPlacard;
 			}   

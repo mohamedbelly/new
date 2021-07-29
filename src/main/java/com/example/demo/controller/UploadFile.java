@@ -51,7 +51,7 @@ public class UploadFile {
 //        this.fileStorageService = fileStorageService;
 //    }
     @RequestMapping(value = "/fichier/{idClasseur}&{idCategorie}" ,method = RequestMethod.POST)
-    List<Fichier> addfichier(@Valid @RequestParam("fichier") MultipartFile[] fichier,
+    List<Fichier> addfichier( @RequestParam("fichier") @Valid MultipartFile[] fichier,
     						 @PathVariable Long idClasseur,
     						 @PathVariable Long idCategorie ){
 		 

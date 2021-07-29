@@ -64,7 +64,7 @@ public class ServisesController {
 //			 "nbrCases":2
 //	  }
 	@RequestMapping(value = "/service" ,method = RequestMethod.POST)
-	public Services addService(@Valid @RequestBody Services s, BindingResult bindingResult ){
+	public Services addService( @RequestBody @Valid Services s, BindingResult bindingResult ){
 		if(bindingResult.hasErrors()) {
 			//return FormService;
 		}   

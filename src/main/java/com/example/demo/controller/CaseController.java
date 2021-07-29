@@ -60,7 +60,7 @@ public class CaseController {
 //  	    }
 //  	}
 	@RequestMapping(value = "/case", method = RequestMethod.POST)
-	public Cases addCase(@Valid @RequestBody Cases c, BindingResult bindingResult){
+	public Cases addCase( @RequestBody @Valid Cases c, BindingResult bindingResult){
 		if(bindingResult.hasErrors()) {
 			//return FormService;
 		}
